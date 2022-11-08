@@ -35,6 +35,7 @@ function renderMovies() {
     fetch(`https://www.omdbapi.com/?s=${search.value}&t=&type=movie&page=1&apikey=${apiKey}`)
         .then(response =>  response.json())
         .then(data => {
+            
             for (let movie of data.Search) {
                 fetch(`https://www.omdbapi.com/?i=${movie.imdbID}&apikey=${apiKey}`)
                 .then((res) => res.json())
@@ -68,11 +69,19 @@ function renderMovies() {
     // btnAddToWatchlist()
     }) 
 }
+storeMovie.addEventListener("click", function(e) {
+    if(e.target.dataset.show) {
+        btnAddToWatchlist(e.target.dataset.show)
+    }
+})
 
 function btnAddToWatchlist(movies) {
     console.log(movies)
     storeMovie.innerHTML = movies.imdbID
+    imdbIdArray.push(movies)
+    localStorage.setItem("movies", movies.imdbID)
 }
+
 
 
 // function btnAddToWatchlist(movie){
@@ -97,11 +106,11 @@ message.addEventListener("click", function(e) {
 })
 
 // if (storeMovie)
-storeMovie.addEventListener("click", function(e) {
-    if(e.target.dataset.show) {
-        btnAddToWatchlist(e.target.dataset.show)
-    }
-})
+// storeMovie.addEventListener("click", function(e) {
+//     if(e.target.dataset.show) {
+//         btnAddToWatchlist(e.target.dataset.show)
+//     }
+// })
             
             
 document.addEventListener("click", function(e){
