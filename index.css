@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+ text-align: center;   
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+img {
+    /* margin: 25px; */
+}
+
+
+#container {
+    display: flex;
+    flex-direction: column;
+}
+
+#header {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    background: url(/img/film-wall.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: auto;
+    color: #fff;
+    padding: 25px 15px 35px;
+}
+
+#search-section {
+    display: flex;
+    justify-content: center;
+    /* background: ; */
+    margin: -20px 100px 0px;
+    /* border: solid 1px #000; */
+    border-radius: 5px;
+}
+
+#search-left-side {
+    display: flex;
+    gap: 10px;
+    background: #fff;
+    align-items: center;
+    /* background-size: cover; */
+    /* border-right: solid 1px #000; */
+    /* padding: 10px 150px 10px 0; */
+    border: solid 1px #9CA3AF;
+    border-radius: 5px;
+}
+
+#search-icon {
+    width: 25px;
+    height: 20px;
+    padding-left: 5px;
+}
+
+#search-bar {
+    border: none;
+}
+
+#search-button {
+    padding: 10px 15px;
+    border: none;
+}
+
+#movie-section {
+    color: #dfdddd;
+    padding-top: 75px;
+}
+
+#movie-list-no-data,
+#movie-list-start {
+    padding: 25px 100px;
+}
+
+#bottom-line {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#plus {
+    width: 25px;
+    height: auto;
+}
+
+#add-movies-title {
+    color: #000;
+}
+
+.movie-results {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    color: black;
+    padding-bottom: 1.5rem;
+}
+
+
+hr {
+    border-top: 1px solid #dfdddd;
+}
+
+.movie-info {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 10rem;
+    padding: 2rem;
+}
+
+.icons {
+    width: 1rem;
+    height: auto;
+    margin: 0 0.25rem;
+}
+
+
+.para-plot {
+    display: flex;
+    
+}
+
+.para-plot {
+    margin-left: 1rem;
+}
+
+.movie-col-1 {
+    display: flex;
+    margin-left: 25px;
+    padding: 25px 15px 10px 5px;
+}
+
+.movie-col-2 {
+    /* width: 100%; */
+    /* height: 50%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.movie-col-2 p {
+    /* margin: 0.5rem; */
+}
+
+.movie-title-rating {
+    display: flex;
+    align-items: baseline;
+}
+
+h3.movie-info {
+    margin: 0;
+    padding: 10px;
+}
+
+img.movie-size {
+    max-width: 6rem;
+    /* height: 80%; */
+    /* max-width: 100px; */
+    height: 9rem;
+    align-self: center;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.movie-runtime {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 15px;
+    margin-left: 10px;
+}
+
+p {
+    text-align: left;
+    margin-top: 0.75rem;
+}
