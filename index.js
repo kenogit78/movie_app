@@ -120,7 +120,7 @@ function btnAddToWatchlist(movies) {
     //     <hr>
     //     `
         // console.log(movies)
-        imdbIdArray.push(id)
+        // imdbIdArray.push(id)
 }
 
 
