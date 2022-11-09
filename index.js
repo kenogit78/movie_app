@@ -5,7 +5,7 @@ const apiKey = "f2bd1f9f"
 let imdbIdArray = []
 let allMovies = []
 let storeMovie = document.querySelector(".store-movies")
-let Id
+// let Id
 // let watchList = document.getElementById("watch-list")
 // console.log(watchList)
 
@@ -47,7 +47,7 @@ function renderMovies() {
                 .then((res) => res.json())
                 .then(data => {
                     allMovies.push(data)
-                    // console.log(allMovies)
+                    console.log(allMovies)
                     const movieListing = 
                         `
                         <div class="movie-results" id="minus" data-show="true">
@@ -60,7 +60,7 @@ function renderMovies() {
                                     <p><img src="img/star.png" class="icons">${data.Rated}</p>
                                 </div>
                                 <div class="movie-runtime">
-                                    <p>${data.Runtime}  ${data.Genre}  <button class="store-movies"><img src="img/plus.png" class="icons" data-show="${data.ID}"></button class="add-movie"> Watchlist</p>
+                                    <p>${data.Runtime}  ${data.Genre}  <button class="store-movies"><img  onclick="getID('${data.imdbID}')" src="img/plus.png" class="icons" data-show="${data.ID}"></button class="add-movie"> Watchlist</p>
                                 </div>
                                 <div class="para-plot">
                                     <p>${data.Plot}</p>
@@ -78,12 +78,27 @@ function renderMovies() {
     }) 
 }
 
-storeMovie.addEventListener("click", btnAddToWatchlist)
+// if(storeMovie){
+//     storeMovie.addEventListener("click", function () {
+//         console.log('hello')
+//     });
+// }
+
+function getID(id){
+    console.log(id)
+    fetch(`https://www.omdbapi.com/?i=${id}&apikey=${apiKey}`)
+    .then((res) => res.json())
+                .then(data => {
+                    console.log(data)
+                })
+}
+
 
 
 function btnAddToWatchlist(movies) {
     // storeMovie.innerHTML = movies.imdbID
     // let listing = movies.imdbID
+
     let id = movies.imdbID
     // console.log(id)
     imdbIdArray.push(id)
